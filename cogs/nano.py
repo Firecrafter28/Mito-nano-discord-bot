@@ -3,8 +3,10 @@ from discord import app_commands
 from discord.ext import commands
 import random
 import os
+import config
 
-class nano(commands.Cog):
+
+class Nano(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
 
@@ -24,4 +26,4 @@ class nano(commands.Cog):
         await interaction.response.send_message(file=discord.File("./images/"+path))
 
 async def setup(bot):
-    await bot.add_cog(nano(bot), guilds=[discord.Object(id=850466170829013044)])
+    await bot.add_cog(Nano(bot), guilds=[discord.Object(id=config.GUILD_ID)])

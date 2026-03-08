@@ -1,8 +1,10 @@
 import discord
 from discord import app_commands
 from discord.ext import commands
+import config
 
-class owo(commands.Cog):
+
+class Owo(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
 
@@ -15,4 +17,4 @@ class owo(commands.Cog):
         await interaction.response.send_message('owo') 
 
 async def setup(bot):
-    await bot.add_cog(owo(bot), guilds=[discord.Object(id=850466170829013044)])
+    await bot.add_cog(Owo(bot), guilds=[discord.Object(id=config.GUILD_ID)])
